@@ -1,112 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from "react";
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TALOC Technologies</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-    }
-  </style>
-</head>
+export default function LandingPage() {
+  return (
+    <div className="bg-white text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section className="bg-gray-900 text-white py-20 px-6 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Engineering Innovation for Government & Defense
+        </h1>
+        <p className="text-xl md:text-2xl mb-8">
+          Taloc Tech builds custom solutions that power national security missions
+        </p>
+        <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg">
+          Schedule a Demo
+        </button>
+      </section>
 
-<body class="bg-black text-white">
-  <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex justify-between items-center">
-    <img src="logo-header.jpg" alt="TALOC" class="h-8">
-    <div class="space-x-6 text-sm">
-      <a href="#mission" class="hover:underline">Mission</a>
-      <a href="#technology" class="hover:underline">Technology</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="text-center py-36 px-6 bg-gradient-to-br from-gray-900 to-black">
-    <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-tight" data-aos="fade-up">Transforming Defense with Advanced Technology</h1>
-    <p class="mt-6 text-xl md:text-2xl max-w-3xl mx-auto text-gray-300" data-aos="fade-up" data-aos-delay="100">
-      Security threats evolve fast. TALOC builds laser communication systems to leap ahead in capability — with agility, autonomy, and trust.
-    </p>
-    <div class="mt-10 flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="200">
-      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md text-lg transition-all">Contact Us</a>
-      <a href="#technology" class="border border-white px-8 py-4 rounded-md text-lg hover:bg-white hover:text-black transition-all">Explore Technology</a>
-    </div>
-  </section>
-
-  <!-- Mission Section -->
-  <section id="mission" class="py-28 px-6 bg-black">
-    <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-6">Rebuilding the Arsenal</h2>
-      <div class="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        America’s defense infrastructure is overdue for reinvention. TALOC is answering that call — bringing scalable, precision-built systems to the field at a speed and scale legacy contractors can’t match.
-        We believe in restoring readiness by delivering high-quality tools that enable safe, secure operations across domains.
-      </p>
-    </div>
-  </section>
-
-  <!-- Technology Section -->
-  <section id="technology" class="py-28 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Tactical Laser Communication</h2>
-      <div class="h-1 w-24 bg-blue-600 mx-auto mb-12"></div>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg" data-aos="fade-up">
-          <img src="laser-cad.png" class="rounded mb-4" alt="Precision Laser">
-          <h3 class="text-2xl font-semibold mb-2">Gen-4 Optical Transceiver</h3>
-          <p class="text-gray-400">Our fourth-generation system enables encrypted high-bandwidth laser communication, designed for tactical and long-range defense deployments.</p>
+      {/* Solutions Section */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-10 text-center">Our Solutions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {['Command Interfaces', 'Field Deployable Systems', 'Secure Communications'].map((solution, index) => (
+            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2">{solution}</h3>
+              <p className="text-gray-700">
+                Brief description of the solution and how it helps government missions.
+              </p>
+            </div>
+          ))}
         </div>
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <img src="prototype.jpg" class="rounded mb-4" alt="Prototype">
-          <h3 class="text-2xl font-semibold mb-2">Prototype Platform</h3>
-          <p class="text-gray-400">Ruggedized, modular, and compact — our platform supports mission-critical use cases with reduced latency and enhanced resilience.</p>
+      </section>
+
+      {/* Industries Served */}
+      <section className="bg-gray-50 py-16 px-6">
+        <h2 className="text-3xl font-semibold mb-10 text-center">Industries We Serve</h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          {['Government Agencies', 'Defense Contractors', 'Critical Infrastructure'].map((industry, index) => (
+            <div key={index} className="bg-white border p-6 rounded-md w-64 text-center shadow">
+              <h3 className="text-xl font-medium mb-2">{industry}</h3>
+              <p className="text-gray-600">Customized tech that adapts to the operational landscape.</p>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
+
+      {/* Technology Section */}
+      <section className="py-16 px-6 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Technology & Capabilities</h2>
+        <ul className="list-disc list-inside space-y-4 text-gray-700">
+          <li>Modular design for rapid deployment and updates</li>
+          <li>Encrypted communications channels with adaptive routing</li>
+          <li>Cross-platform data visualization and control interfaces</li>
+          <li>Compliance with federal cybersecurity frameworks</li>
+        </ul>
+      </section>
+
+      {/* About Section */}
+      <section className="bg-gray-900 text-white py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-4">About Taloc Tech</h2>
+          <p className="text-lg">
+            Taloc Tech is a mission-driven startup developing innovative solutions that support the operational goals of government and defense partners. We leverage experience, agility, and integrity to deliver real impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 px-6 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
+        <form className="space-y-4">
+          <input type="text" placeholder="Name" className="w-full p-3 border rounded-md" />
+          <input type="email" placeholder="Email" className="w-full p-3 border rounded-md" />
+          <textarea placeholder="Message" className="w-full p-3 border rounded-md h-32"></textarea>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md">
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; {new Date().getFullYear()} Taloc Tech. All rights reserved.</p>
+      </footer>
     </div>
-  </section>
-
-  <!-- Autonomy Section -->
-  <section class="py-28 px-6 bg-black">
-    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-6">Autonomy for Every Mission</h2>
-      <div class="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        TALOC’s vision extends beyond connectivity. We are building layered systems that integrate AI-driven automation and self-healing networking to enable future-forward force protection across air, sea, land, and space.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-28 px-6 bg-gray-900">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">Contact Us</h2>
-      <div class="h-1 w-20 bg-blue-600 mx-auto mb-10"></div>
-      <p class="text-center text-gray-300 mb-2">Phone: <a href="tel:+13015147805" class="underline">(301) 514-7805</a></p>
-      <p class="text-center text-gray-300 mb-8">Email: <a href="mailto:Ziegler@taloctech.com" class="underline">Ziegler@taloctech.com</a></p>
-      <form class="space-y-6" data-aos="fade-up" data-aos-delay="100">
-        <input type="text" placeholder="Name" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md text-white">
-        <input type="email" placeholder="Email" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md text-white">
-        <textarea placeholder="Message" rows="5" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md text-white"></textarea>
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-md text-lg transition-all">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-black border-t border-gray-800">
-    <img src="logo-footer.png" alt="TALOC Logo Footer" class="h-10 mx-auto mb-2">
-    <p class="text-sm text-gray-500">&copy; 2025 TALOC Technologies. All rights reserved.</p>
-  </footer>
-
-  <script>
-    AOS.init({ once: true });
-  </script>
-</body>
-
-</html>
+  );
+}
