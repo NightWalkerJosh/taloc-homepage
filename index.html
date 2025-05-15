@@ -1,86 +1,106 @@
-import React from "react";
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
-export default function LandingPage() {
+export default function HomePage() {
   return (
-    <div className="bg-white text-gray-800 font-sans">
+    <div className="bg-gray-950 text-white font-sans">
       {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Engineering Innovation for Government & Defense
-        </h1>
-        <p className="text-xl md:text-2xl mb-8">
-          Taloc Tech builds custom solutions that power national security missions
+      <section className="text-center py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-800">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">Stay Ahead of Drone Threats</h1>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          Protect against drones that threaten safety, disrupt operations, or invade privacy — all from a cloud-based platform.
         </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg">
-          Schedule a Demo
-        </button>
+        <Button className="text-lg px-8 py-4">Schedule My Demo</Button>
       </section>
 
-      {/* Solutions Section */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-10 text-center">Our Solutions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {['Command Interfaces', 'Field Deployable Systems', 'Secure Communications'].map((solution, index) => (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">{solution}</h3>
-              <p className="text-gray-700">
-                Brief description of the solution and how it helps government missions.
-              </p>
-            </div>
+      {/* Stats Section */}
+      <section className="grid md:grid-cols-3 gap-6 text-center py-20 px-6 bg-gray-800">
+        <div>
+          <h2 className="text-5xl font-bold">10M</h2>
+          <p>consumer drones shipped by 2030</p>
+        </div>
+        <div>
+          <h2 className="text-5xl font-bold">1.5M</h2>
+          <p>unregistered drones in the U.S.</p>
+        </div>
+        <div>
+          <h2 className="text-5xl font-bold">2,500</h2>
+          <p>reported drone incidents per year</p>
+        </div>
+      </section>
+
+      {/* Advantage Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-800 to-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">The Taloc Advantage</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {[
+            "No hardware maintenance",
+            "Advanced drone forensics",
+            "Real-time alerts",
+            "Historical insights",
+            "Proven reliability",
+          ].map((title, idx) => (
+            <Card key={idx} className="bg-gray-950 border border-gray-800">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-gray-300">
+                  Description of {title.toLowerCase()} goes here, detailing benefits to the end-user.
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
 
-      {/* Industries Served */}
-      <section className="bg-gray-50 py-16 px-6">
-        <h2 className="text-3xl font-semibold mb-10 text-center">Industries We Serve</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {['Government Agencies', 'Defense Contractors', 'Critical Infrastructure'].map((industry, index) => (
-            <div key={index} className="bg-white border p-6 rounded-md w-64 text-center shadow">
-              <h3 className="text-xl font-medium mb-2">{industry}</h3>
-              <p className="text-gray-600">Customized tech that adapts to the operational landscape.</p>
-            </div>
+      {/* Industries Section */}
+      <section className="py-20 px-6 bg-gray-900 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">Core Industries We Serve</h2>
+        <div className="grid md:grid-cols-3 gap-4 text-gray-300">
+          {[
+            "Airports",
+            "Correctional Facilities",
+            "Critical Infrastructure",
+            "Law Enforcement",
+            "Military & Government",
+            "Universities & Stadiums",
+          ].map((industry, i) => (
+            <div key={i} className="bg-gray-800 p-4 rounded-lg">{industry}</div>
           ))}
         </div>
       </section>
 
-      {/* Technology Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Technology & Capabilities</h2>
-        <ul className="list-disc list-inside space-y-4 text-gray-700">
-          <li>Modular design for rapid deployment and updates</li>
-          <li>Encrypted communications channels with adaptive routing</li>
-          <li>Cross-platform data visualization and control interfaces</li>
-          <li>Compliance with federal cybersecurity frameworks</li>
-        </ul>
+      {/* Call to Action */}
+      <section className="py-20 px-6 bg-gray-800 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">See Taloc in Action</h2>
+        <p className="mb-8 max-w-xl mx-auto">
+          Drones aren’t just for military ops anymore — they’re a real and growing threat. Let us show you how Taloc Tech’s drone defense systems can safeguard your people, assets, and operations.
+        </p>
+        <Button className="text-lg px-8 py-4">Schedule A Demo</Button>
       </section>
 
-      {/* About Section */}
-      <section className="bg-gray-900 text-white py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-4">About Taloc Tech</h2>
-          <p className="text-lg">
-            Taloc Tech is a mission-driven startup developing innovative solutions that support the operational goals of government and defense partners. We leverage experience, agility, and integrity to deliver real impact.
-          </p>
-        </div>
+      {/* Careers Section */}
+      <section className="py-20 px-6 bg-gray-950 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Us in Securing Our Skies</h2>
+        <p className="mb-8 max-w-xl mx-auto">
+          We’re leading the charge in drone surveillance and security. Be part of our mission.
+        </p>
+        <Button className="text-lg px-8 py-4">View Careers</Button>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
-        <form className="space-y-4">
-          <input type="text" placeholder="Name" className="w-full p-3 border rounded-md" />
-          <input type="email" placeholder="Email" className="w-full p-3 border rounded-md" />
-          <textarea placeholder="Message" className="w-full p-3 border rounded-md h-32"></textarea>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md">
-            Send Message
-          </button>
-        </form>
+      <section className="py-20 px-6 bg-gray-900 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h2>
+        <p className="mb-8 max-w-xl mx-auto">
+          For any inquiries, partnerships, or questions, please reach out to us.
+        </p>
+        <div className="text-gray-300 text-lg">Contact us at <a className="underline" href="mailto:info@taloctech.com">info@taloctech.com</a></div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; {new Date().getFullYear()} Taloc Tech. All rights reserved.</p>
+      <footer className="py-10 px-6 bg-black text-center text-sm text-gray-500">
+        <div>© 2025 Taloc Tech | All Rights Reserved</div>
+        <div className="mt-2">info@taloctech.com | jobs@taloctech.com</div>
       </footer>
     </div>
   );
